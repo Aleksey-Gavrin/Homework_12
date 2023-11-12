@@ -1,6 +1,6 @@
 public class Library {
     private final Book[] library;
-    private static int currentIndex = 0;
+    private int currentIndex = 0;
     public Library(int size) {
         this.library = new Book[size];
     }
@@ -21,8 +21,7 @@ public class Library {
         boolean match = false;
         for (Book book : library) {
             if (book != null && book.getTitle().equals(title)) {
-                System.out.println(book.getTitle() + " написана " + book.getAuthor() + " и опубликована в " +
-                        book.getPblctnYear() + " году.");
+                System.out.println(book);
                 match = true;
             }
         }
@@ -43,6 +42,17 @@ public class Library {
         if (!match) {
             System.out.println("Такой книги нет в библиотеке.");
         }
+    }
+    @Override
+    public String toString() {
+        StringBuilder out = new StringBuilder("Library:" + "\n");
+        for (Book book : library) {
+            if (book != null) {
+                out.append(book).append("\n");
+            }
+        }
+        return String.valueOf(out);
+
     }
 }
 
