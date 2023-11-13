@@ -29,7 +29,7 @@ public class Author {
     }
     @Override
     public int hashCode() {
-        return java.util.Objects.hashCode(firstName) + java.util.Objects.hashCode(secondName);
+        return java.util.Objects.hash(firstName, secondName);
     }
 }
 
